@@ -1,0 +1,579 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={ExamFin\_INF104},
+  pdfauthor={Peter,Fabrice,Darwin,Bendy},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{ExamFin\_INF104}
+\author{Peter,Fabrice,Darwin,Bendy}
+\date{2023-06-17}
+
+\begin{document}
+\maketitle
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\begin{verbatim}
+## [1] "Nous avons choisi les variables de taux de change, d'exportations, d'importations et d'IDE (investissements directs étrangers) pour analyser la performance économique d'Haïti sur une période de 33 ans, de 1988 à 2021. Le taux de change est un indicateur important pour mesurer la compétitivité de la monnaie nationale sur les marchés internationaux. Avec les importations, le signe attendu est négatif(-) car toute augmentation du taux de change décourage les importations. Les exportations, elles, impactent le taux de change positivement car toute augmentation de celui-ci(dévaluation de la monnaie locale) engendre une augmentation des exportations. Enfin, les IDE sont un indicateur clé des flux de capitaux étrangers entrants mais sachant qu'ils dépendent de la stabilité politique et des règlementations économiques, le signe attendu du taux de change ne sera pas vraiment clair."
+\end{verbatim}
+
+\hypertarget{tableaux-des-variables}{%
+\section{Tableaux des variables}\label{tableaux-des-variables}}
+
+\hypertarget{tableau-1}{%
+\subsubsection{Tableau 1}\label{tableau-1}}
+
+Pays
+
+Date
+
+Tauxdechange
+
+Exportations
+
+Importations
+
+IDE
+
+Haiti
+
+1988
+
+5.000000
+
+16.302132
+
+848904800
+
+0.38639185
+
+Haiti
+
+1989
+
+5.000000
+
+13.015419
+
+753772600
+
+0.34207478
+
+Haiti
+
+1990
+
+5.000000
+
+11.910184
+
+1068364600
+
+0.25837375
+
+Haiti
+
+1991
+
+6.034167
+
+10.311445
+
+1024557089
+
+-0.05182032
+
+Haiti
+
+1992
+
+9.801667
+
+7.571511
+
+563516992
+
+-0.09746927
+
+Haiti
+
+1993
+
+12.822500
+
+10.845350
+
+711986182
+
+-0.14907504
+
+Haiti
+
+1994
+
+15.040000
+
+6.420727
+
+535668263
+
+-0.12917725
+
+Haiti
+
+1995
+
+15.109733
+
+9.133564
+
+807821955
+
+0.26303505
+
+Haiti
+
+1996
+
+15.701150
+
+11.327631
+
+840148096
+
+0.14101391
+
+Haiti
+
+1997
+
+16.654500
+
+10.452542
+
+882865728
+
+0.11979854
+
+Haiti
+
+1998
+
+16.765667
+
+9.900471
+
+991316376
+
+0.28894367
+
+Haiti
+
+1999
+
+16.937892
+
+12.249112
+
+1233633425
+
+0.72224131
+
+Haiti
+
+2000
+
+21.170667
+
+7.347065
+
+1366788598
+
+0.19446465
+
+Haiti
+
+2001
+
+24.429083
+
+7.031211
+
+1316250001
+
+0.06948874
+
+Haiti
+
+2002
+
+29.250483
+
+6.952309
+
+1250030000
+
+0.09408837
+
+Haiti
+
+2003
+
+42.366758
+
+9.732161
+
+1416987900
+
+0.28590207
+
+Haiti
+
+2004
+
+38.352033
+
+8.588606
+
+1562037812
+
+0.09773131
+
+Haiti
+
+2005
+
+40.448550
+
+8.422388
+
+1852887695
+
+0.36191211
+
+Haiti
+
+2006
+
+40.408517
+
+9.165917
+
+2141589441
+
+2.13617581
+
+Haiti
+
+2007
+
+36.861417
+
+8.182514
+
+2384473294
+
+0.78233595
+
+Haiti
+
+2008
+
+39.107592
+
+8.747568
+
+2853795286
+
+0.28420944
+
+Haiti
+
+2009
+
+41.197608
+
+8.916116
+
+2804202714
+
+0.47831275
+
+Haiti
+
+2010
+
+39.797400
+
+8.570288
+
+4287330050
+
+1.50092985
+
+Haiti
+
+2011
+
+40.522822
+
+10.174764
+
+4195339999
+
+0.91476862
+
+Haiti
+
+2012
+
+41.949723
+
+9.655094
+
+4195363034
+
+1.13794468
+
+Haiti
+
+2013
+
+43.462783
+
+10.514402
+
+4442565271
+
+1.08652151
+
+Haiti
+
+2014
+
+45.215981
+
+10.978847
+
+4753280624
+
+0.65392872
+
+Haiti
+
+2015
+
+50.706427
+
+11.783025
+
+4490959841
+
+0.71245803
+
+Haiti
+
+2016
+
+63.335818
+
+11.534050
+
+4691487577
+
+0.74994493
+
+Haiti
+
+2017
+
+64.769680
+
+11.069652
+
+5215383364
+
+2.49315616
+
+Haiti
+
+2018
+
+68.031754
+
+10.816190
+
+5997556607
+
+0.63810259
+
+Haiti
+
+2019
+
+88.814966
+
+11.714119
+
+5536983124
+
+0.50724209
+
+Haiti
+
+2020
+
+93.509807
+
+7.651007
+
+4318064226
+
+0.17231613
+
+Haiti
+
+2021
+
+89.226637
+
+7.114724
+
+6269037074
+
+0.24492952
+
+\hypertarget{nuage-de-points}{%
+\section{Nuage de points}\label{nuage-de-points}}
+
+\hypertarget{graph-a-taux_de_changeexportations}{%
+\subsubsection{Graph A :
+Taux\_de\_change\textasciitilde Exportations}\label{graph-a-taux_de_changeexportations}}
+
+\begin{verbatim}
+## `geom_smooth()` using formula = 'y ~ x'
+\end{verbatim}
+
+\includegraphics{ExamFin_INF104_files/figure-latex/unnamed-chunk-3-1.pdf}
+\#\#\# Graph B : Taux\_de\_change\textasciitilde Importations
+
+\begin{verbatim}
+## `geom_smooth()` using formula = 'y ~ x'
+\end{verbatim}
+
+\includegraphics{ExamFin_INF104_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\hypertarget{graph-c-taux_de_changeide}{%
+\subsubsection{Graph C :
+Taux\_de\_change\textasciitilde IDE}\label{graph-c-taux_de_changeide}}
+
+\begin{verbatim}
+## `geom_smooth()` using formula = 'y ~ x'
+\end{verbatim}
+
+\includegraphics{ExamFin_INF104_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\hypertarget{ruxe9gression}{%
+\section{Régression}\label{ruxe9gression}}
+
+\hypertarget{tableau-de-regression}{%
+\subsubsection{Tableau de regression}\label{tableau-de-regression}}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Tauxdechange ~ Exportations + Importations + IDE, 
+##     data = tableau_combine)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -16.1788  -7.3525  -0.4275   3.8454  29.9124 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)   2.745e+01  9.687e+00   2.834  0.00815 ** 
+## Exportations -2.168e+00  9.420e-01  -2.301  0.02850 *  
+## Importations  1.237e-08  1.212e-09  10.208 2.82e-11 ***
+## IDE          -3.950e+00  3.828e+00  -1.032  0.31039    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 11.03 on 30 degrees of freedom
+## Multiple R-squared:  0.8165, Adjusted R-squared:  0.7982 
+## F-statistic:  44.5 on 3 and 30 DF,  p-value: 3.662e-11
+\end{verbatim}
+
+\hypertarget{nuage-de-points-valeurs-ruxe9siduelles-vs-valleurs-estimuxe9es}{%
+\subsubsection{Nuage de points valeurs résiduelles vs valleurs
+estimées}\label{nuage-de-points-valeurs-ruxe9siduelles-vs-valleurs-estimuxe9es}}
+
+\includegraphics{ExamFin_INF104_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{commentaires}{%
+\subsubsection{Commentaires}\label{commentaires}}
+
+\begin{verbatim}
+## [1] "Idéalement, on s'attendrait à ce que les points soient répartis de manière homogène aléatoire autour de l'axe y = 0, ce qui indiquerait que le modèle linéaire est approprié pour expliquer la variation de la variable dépendante.Cependant, il y a une légère tendance à l'hétéroscédasticité, ce qui pourrait être dû à la présence d'observations atypiques dont il faudrait vérifier la source."
+\end{verbatim}
+
+\end{document}
