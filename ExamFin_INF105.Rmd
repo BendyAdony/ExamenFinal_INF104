@@ -1,6 +1,6 @@
 ---
 title: "ExamFin_INF104"
-author: "Peter,Fabrice,Darwin,Bendy"
+author: "Peter  Frantzley CHARLES,Fabrice Salomon CHARLES,Sri Darwin BOIREAU,Bendy Widelph Adony LILITE"
 date: "`r Sys.Date()`"
 output:
   word_document: default
